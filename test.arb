@@ -1,0 +1,17 @@
+class Test
+    @@y = 0
+    def initialize(num)
+        @@y = num
+    end
+    def check_min(x)
+        min = if x < @@y then x else @@y
+        end
+    end
+
+end
+
+
+t = Thread.new do
+    test = Test.new 5
+    puts test.check_min 3
+end
