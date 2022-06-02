@@ -26,6 +26,7 @@ class BreadthFirstSearch
                 queue.unshift(next_node.right)
             end
         end
+        false
     end
 end
 
@@ -43,4 +44,6 @@ node_two.right = node_five
 node_three.left = node_six
 node_three.right = node_seven
 bfs = BreadthFirstSearch.new
-puts bfs.getNode(node, 7)
+puts "What value are you searching for?"
+val = gets.chomp
+puts bfs.getNode(node, val.to_i)
