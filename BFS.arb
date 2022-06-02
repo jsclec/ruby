@@ -1,0 +1,46 @@
+class Node
+    attr_accessor :val
+    attr_accessor :left
+    attr_accessor :right
+
+    def initialize(val)
+        @val = val
+    end
+end
+
+class BreadthFirstSearch
+
+    def getNode(node, val)
+        queue = []
+        queue.unshift(node)
+        until(queue.empty?)
+            next_node = queue.pop
+            p next_node.val
+            if(next_node.val == val)
+                return true
+            end
+            if(next_node.left != nil)
+                queue.unshift(next_node.left)
+            end
+            if(next_node.right != nil)
+                queue.unshift(next_node.right)
+            end
+        end
+    end
+end
+
+node = Node.new 3 
+node_two = Node.new 4 
+node_three = Node.new 5 
+node_four = Node.new 6
+node_five = Node.new 7
+node_six = Node.new 8
+node_seven = Node.new 9
+node.left = node_two
+node.right = node_three
+node_two.left = node_four
+node_two.right = node_five
+node_three.left = node_six
+node_three.right = node_seven
+bfs = BreadthFirstSearch.new
+puts bfs.getNode(node, 7)
