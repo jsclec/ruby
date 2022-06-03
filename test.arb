@@ -15,3 +15,31 @@ t = Thread.new do
     test = Test.new 5
     puts test.check_min 3
 end
+
+arr = Array.new(3, Hash.new)  #if we put an object as the default, all of the array elements will have the same reference
+arr[0]['cat'] = "feline"      #so any subsequent changes to any of these elements will change all of them
+puts arr                      #this outputs [{"cat"=>"feline"},{"cat"=>"feline"},{"cat"=>"feline"}]
+
+puts "Let's mess around with adding, removing, viewing array elements"
+arr = []
+puts arr.push 3
+puts arr.unshift 4
+p arr
+puts arr.pop
+p arr
+puts arr[-1]
+p arr
+puts arr.push(Array.new 3)
+p arr
+
+arr << arr.at(0)
+
+puts "Some additional array methods"
+puts arr.first
+puts arr.last
+arr << [1,2,3]
+puts arr[0..-2]
+puts arr.fetch(10, "nothing here")
+p arr
+
+
