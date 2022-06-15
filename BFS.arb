@@ -46,4 +46,9 @@ node_three.right = node_seven
 bfs = BreadthFirstSearch.new
 puts "What value are you searching for?"
 val = gets.chomp
-puts bfs.getNode(node, val.to_i)
+ans = bfs.getNode(node, val.to_i)
+if ans
+    puts "We found #{val}"
+else
+    puts "We didn't find #{val}"
+end
