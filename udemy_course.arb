@@ -1,0 +1,22 @@
+str = "The quick brown fox jumped over the quick brown dog"
+
+str.gsub! "quick", "slow"
+
+p str
+
+str.upcase!
+
+str << "   a b c d       "
+p str
+p "Now if we a"
+str.strip! #this will remove the empty white space at end
+p str
+
+#now let's convert this string into an array of strings
+str_arr = str.split
+p str_arr
+
+#can also convert it into an array of chars, but there is no uniqueness here, so there can be multiple repeats
+char_arr = str.split(//)
+p char_arr
+

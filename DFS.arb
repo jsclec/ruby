@@ -17,6 +17,7 @@ class DepthFirstSearch
             next_node = stack.pop
             p next_node.val
             if(next_node.val == val)
+                puts "We found #{val}" 
                 return next_node
             end
             if(next_node.right != nil)
@@ -26,6 +27,7 @@ class DepthFirstSearch
                 stack.push(next_node.left)
             end
         end
+        puts "Didn't find #{val}"
     end
 end
 
@@ -43,6 +45,8 @@ node_two.right = node_five
 node_three.left = node_six
 node_three.right = node_seven
 dfs = DepthFirstSearch.new
-dfs.getNode(node, 7)
-puts "We found it here" 
+random_int = rand(9)
+puts "looking for #{random_int}"
+dfs.getNode(node, random_int)
+
             
